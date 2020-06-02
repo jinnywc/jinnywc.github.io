@@ -5,21 +5,19 @@
   
 
   
-  <title>xss | Jinny</title>
+  <title>smtp-shell | Jinny</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ssssssss">
+  <meta name="description" content="在实战中可能会遇到能进行命令执行但就是弹不回shell，这个时候可能是被防火墙检测到了异常流量并进行了拦截，这个时候就可以试一试smtp或者其他协议进行shell交互这次做的smtp-shell的原理就是被控端把执行的命令发送至目标邮件服务器上，被控端在目标邮件服务器上读取命令在本地执行后再发送至目标服务器，通过smtp-shell有概率绕过边界防火墙的检测，有些边界防火墙不会拦截smtp协议的数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="xss">
-<meta property="og:url" content="http://www.jinny.vip/2020/06/02/xss/index.html">
+<meta property="og:title" content="smtp-shell">
+<meta property="og:url" content="http://www.jinny.vip/2020/06/02/smtp-shell/index.html">
 <meta property="og:site_name" content="Jinny">
-<meta property="og:description" content="ssssssss">
+<meta property="og:description" content="在实战中可能会遇到能进行命令执行但就是弹不回shell，这个时候可能是被防火墙检测到了异常流量并进行了拦截，这个时候就可以试一试smtp或者其他协议进行shell交互这次做的smtp-shell的原理就是被控端把执行的命令发送至目标邮件服务器上，被控端在目标邮件服务器上读取命令在本地执行后再发送至目标服务器，通过smtp-shell有概率绕过边界防火墙的检测，有些边界防火墙不会拦截smtp协议的数">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://www.jinny.vip/2020/06/02/img/test12.png">
-<meta property="article:published_time" content="2020-06-02T03:28:15.000Z">
-<meta property="article:modified_time" content="2020-06-02T03:38:46.076Z">
+<meta property="article:published_time" content="2020-06-02T08:12:43.000Z">
+<meta property="article:modified_time" content="2020-06-02T09:25:52.418Z">
 <meta property="article:author" content="Jinny">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://www.jinny.vip/2020/06/02/img/test12.png">
   
     <link rel="alternate" href="/atom.xml" title="Jinny" type="application/atom+xml">
   
@@ -68,10 +66,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-xss" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-smtp-shell" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/06/02/xss/" class="article-date">
-  <time datetime="2020-06-02T03:28:15.000Z" itemprop="datePublished">2020-06-02</time>
+    <a href="/2020/06/02/smtp-shell/" class="article-date">
+  <time datetime="2020-06-02T08:12:43.000Z" itemprop="datePublished">2020-06-02</time>
 </a>
     
   </div>
@@ -82,7 +80,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      xss
+      smtp-shell
     </h1>
   
 
@@ -90,12 +88,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>ssssssss<br><img src="../img/test12.png" class="full-image"></p>
+        <p>在实战中可能会遇到能进行命令执行但就是弹不回shell，这个时候可能是被防火墙检测到了异常流量并进行了拦截，这个时候就可以试一试smtp或者其他协议进行shell交互<br>这次做的smtp-shell的原理就是被控端把执行的命令发送至目标邮件服务器上，被控端在目标邮件服务器上读取命令在本地执行后再发送至目标服务器，通过smtp-shell有概率绕过边界防火墙的检测，有些边界防火墙不会拦截smtp协议的数据。<br><img url="../img/smtp_shell.png" class="full-image"><br>项目地址:<a href="https://github.com/jinnywc/smtp_shell" target="_blank" rel="noopener">https://github.com/jinnywc/smtp_shell</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.jinny.vip/2020/06/02/xss/" data-id="ckaxpwx2g0003i8nb00at4fgy" class="article-share-link">Share</a>
+      <a data-url="http://www.jinny.vip/2020/06/02/smtp-shell/" data-id="ckaxpwx2b0001i8nb60ctc6im" class="article-share-link">Share</a>
       
       
     </footer>
@@ -104,19 +102,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2020/06/02/smtp-shell/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          smtp-shell
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/04/21/test/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/06/02/xss/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">test</div>
+      <div class="article-nav-title">xss</div>
     </a>
   
 </nav>

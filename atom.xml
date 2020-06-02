@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.jinny.vip/"/>
-  <updated>2020-06-02T03:38:46.076Z</updated>
+  <updated>2020-06-02T09:25:52.418Z</updated>
   <id>http://www.jinny.vip/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>smtp-shell</title>
+    <link href="http://www.jinny.vip/2020/06/02/smtp-shell/"/>
+    <id>http://www.jinny.vip/2020/06/02/smtp-shell/</id>
+    <published>2020-06-02T08:12:43.000Z</published>
+    <updated>2020-06-02T09:25:52.418Z</updated>
+    
+    <content type="html"><![CDATA[<p>在实战中可能会遇到能进行命令执行但就是弹不回shell，这个时候可能是被防火墙检测到了异常流量并进行了拦截，这个时候就可以试一试smtp或者其他协议进行shell交互<br>这次做的smtp-shell的原理就是被控端把执行的命令发送至目标邮件服务器上，被控端在目标邮件服务器上读取命令在本地执行后再发送至目标服务器，通过smtp-shell有概率绕过边界防火墙的检测，有些边界防火墙不会拦截smtp协议的数据。<br><img url="../img/smtp_shell.png" class="full-image"><br>项目地址:<a href="https://github.com/jinnywc/smtp_shell" target="_blank" rel="noopener">https://github.com/jinnywc/smtp_shell</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在实战中可能会遇到能进行命令执行但就是弹不回shell，这个时候可能是被防火墙检测到了异常流量并进行了拦截，这个时候就可以试一试smtp或者其他协议进行shell交互&lt;br&gt;这次做的smtp-shell的原理就是被控端把执行的命令发送至目标邮件服务器上，被控端在目标邮件服务
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>xss</title>

@@ -64,6 +64,43 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-smtp-shell" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/02/smtp-shell/" class="article-date">
+  <time datetime="2020-06-02T08:12:43.000Z" itemprop="datePublished">2020-06-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/02/smtp-shell/">smtp-shell</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在实战中可能会遇到能进行命令执行但就是弹不回shell，这个时候可能是被防火墙检测到了异常流量并进行了拦截，这个时候就可以试一试smtp或者其他协议进行shell交互<br>这次做的smtp-shell的原理就是被控端把执行的命令发送至目标邮件服务器上，被控端在目标邮件服务器上读取命令在本地执行后再发送至目标服务器，通过smtp-shell有概率绕过边界防火墙的检测，有些边界防火墙不会拦截smtp协议的数据。<br><img url="../img/smtp_shell.png" class="full-image"><br>项目地址:<a href="https://github.com/jinnywc/smtp_shell" target="_blank" rel="noopener">https://github.com/jinnywc/smtp_shell</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.jinny.vip/2020/06/02/smtp-shell/" data-id="ckaxpwx2b0001i8nb60ctc6im" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-xss" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/06/02/xss/" class="article-date">
@@ -91,7 +128,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.jinny.vip/2020/06/02/xss/" data-id="ckaxdj5bh000021nbakmpcikb" class="article-share-link">Share</a>
+      <a data-url="http://www.jinny.vip/2020/06/02/xss/" data-id="ckaxpwx2g0003i8nb00at4fgy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -127,7 +164,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.jinny.vip/2020/04/21/test/" data-id="ckaxdj5c3000221nb7uxh8uwx" class="article-share-link">Share</a>
+      <a data-url="http://www.jinny.vip/2020/04/21/test/" data-id="ckaxpwx2e0002i8nb7xgoaayv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -176,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.jinny.vip/2020/04/21/hello-world/" data-id="ckaxdj5c1000121nb2kvocznl" class="article-share-link">Share</a>
+      <a data-url="http://www.jinny.vip/2020/04/21/hello-world/" data-id="ckaxpwx1z0000i8nb2iop3dnx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -215,6 +252,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/06/02/smtp-shell/">smtp-shell</a>
+          </li>
         
           <li>
             <a href="/2020/06/02/xss/">xss</a>
