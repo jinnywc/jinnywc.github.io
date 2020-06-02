@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.jinny.vip/"/>
-  <updated>2020-04-21T06:07:20.250Z</updated>
+  <updated>2020-06-02T03:38:46.076Z</updated>
   <id>http://www.jinny.vip/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>xss</title>
+    <link href="http://www.jinny.vip/2020/06/02/xss/"/>
+    <id>http://www.jinny.vip/2020/06/02/xss/</id>
+    <published>2020-06-02T03:28:15.000Z</published>
+    <updated>2020-06-02T03:38:46.076Z</updated>
+    
+    <content type="html"><![CDATA[<p>ssssssss<br><img src="../img/test12.png" class="full-image"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;ssssssss&lt;br&gt;&lt;img src=&quot;../img/test12.png&quot; class=&quot;full-image&quot;&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>test</title>
