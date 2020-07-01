@@ -101,7 +101,7 @@
 <p>#安装libpcap的依赖环境<br>yum -y install byacc<br>yum -y install flex bison</p>
 <p>#安装libpcap依赖库<br>wget <a href="http://www.tcpdump.org/release/libpcap-1.9.0.tar.gz" target="_blank" rel="noopener">http://www.tcpdump.org/release/libpcap-1.9.0.tar.gz</a><br>tar -xzvf libpcap-1.9.0.tar.gz<br>cd libpcap-1.9.0<br>./configure<br>make &amp;&amp; make install</p>
 <p>参数说明：<br>-p  跳板的公网IP<br>-lp 指定本机的监听端口<br>-da 目标服务器的内网IP<br>-dp 指定目标服务器的端口<br>-x  为隧道写一个隧道密码，防止隧道滥用</p>
-<p>场景：一个内网中，有一台Web服务器，一台数据库服务器，Web服务器可以ping通过数据库服务器，但是不能直接访问数据库服务器，已知数据库服务器此时有开启3389端口。<br>攻击者的IP地址：192.168.204.43(win7)<br>攻击者的VPS地址：192.168.206.69(kali)<br>web服务器的IP地址：192.168.206.69（外网）<br>数据库服务器的IP地址：192.168.206.67（内网）(win server 2008)</p>
+<p>场景：一个内网中，有一台Web服务器，一台数据库服务器，Web服务器可以ping通过数据库服务器，但是不能直接访问数据库服务器，已知数据库服务器此时有开启3389端口。<br>攻击者的IP地址：192.168.204.43(win10)<br>攻击者的VPS地址：192.168.206.69(kali)<br>web服务器的IP地址：192.168.206.69（外网）<br>数据库服务器的IP地址：192.168.206.67（内网）(win server 2003)</p>
 <p>在攻击者的vps（192.168.206.69）中执行如下命令<br>ptunnel -p 192.168.206.69 -lp 1080 -da 192.168.206.67 -dp 3389 -x cookie</p>
 <p>在Web服务器中执行命令<br>ptunnel -x cookie</p>
 <img src="../img/icmp/pingtunnel.png" class="full-image">
@@ -111,7 +111,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.jinny.vip/2020/06/29/icmp%E9%9A%90%E8%97%8F%E9%9A%A7%E9%81%93/" data-id="ckc35tucu00000inb16hu0ei9" class="article-share-link">Share</a>
+      <a data-url="http://www.jinny.vip/2020/06/29/icmp%E9%9A%90%E8%97%8F%E9%9A%A7%E9%81%93/" data-id="ckc35z1yw00001unb4xwwaeuq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -148,7 +148,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.jinny.vip/2020/06/02/smtp-shell/" data-id="ckc35tudm00010inbcdp86si9" class="article-share-link">Share</a>
+      <a data-url="http://www.jinny.vip/2020/06/02/smtp-shell/" data-id="ckc35z1z800011unb6kyuelsx" class="article-share-link">Share</a>
       
       
     </footer>
