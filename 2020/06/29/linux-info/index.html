@@ -1,0 +1,400 @@
+
+
+<!DOCTYPE html>
+<html lang="en" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>icmp隐藏隧道 - jinny</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="内核，操作系统，设备信息123456789101112...">
+  <meta name="author" content="jinny">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_r673sha78lq.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: '[object Object]'
+      },
+      donate: {
+        enable: true,
+        alipay: '',
+        wechat: ''
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: false,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+    </div>
+    <div class="center">icmp隐藏隧道</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 摄影</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://pl.jinny.vip">jinny</a></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">icmp隐藏隧道</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>June 29, 2020</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>7204</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <h4 id="内核，操作系统，设备信息"><a href="#内核，操作系统，设备信息" class="headerlink" title="内核，操作系统，设备信息"></a>内核，操作系统，设备信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">uname -a    打印所有可用的系统信息</span><br><span class="line">uname -r    内核版本</span><br><span class="line">uname -n    系统主机名。</span><br><span class="line">uname -m    查看系统内核架构（64位&#x2F;32位）</span><br><span class="line">hostname    系统主机名</span><br><span class="line">cat &#x2F;proc&#x2F;version    内核信息</span><br><span class="line">cat &#x2F;etc&#x2F;*-release   分发信息</span><br><span class="line">cat &#x2F;etc&#x2F;issue       分发信息</span><br><span class="line">cat &#x2F;proc&#x2F;cpuinfo    CPU信息</span><br><span class="line">cat &#x2F;etc&#x2F;lsb-release # Debian </span><br><span class="line">cat &#x2F;etc&#x2F;redhat-release # Redhat</span><br><span class="line">ls &#x2F;boot | grep vmlinuz-</span><br></pre></td></tr></table></figure>
+
+<h4 id="用户和群组"><a href="#用户和群组" class="headerlink" title="用户和群组"></a>用户和群组</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">cat &#x2F;etc&#x2F;passwd     列出系统上的所有用户</span><br><span class="line">cat &#x2F;var&#x2F;mail&#x2F;root</span><br><span class="line">cat &#x2F;var&#x2F;spool&#x2F;mail&#x2F;root</span><br><span class="line">cat &#x2F;etc&#x2F;group      列出系统上的所有组</span><br><span class="line">grep -v -E &quot;^#&quot; &#x2F;etc&#x2F;passwd | awk -F: &#39;$3 &#x3D;&#x3D; 0 &#123; print $1&#125;&#39;      列出所有的超级用户账户</span><br><span class="line">whoami              查看当前用户</span><br><span class="line">w                   谁目前已登录，他们正在做什么</span><br><span class="line">last                最后登录用户的列表</span><br><span class="line">lastlog             所有用户上次登录的信息</span><br><span class="line">lastlog –u %username%  有关指定用户上次登录的信息</span><br><span class="line">lastlog |grep -v &quot;Never&quot;  以前登录用户的完</span><br></pre></td></tr></table></figure>
+
+<h4 id="用户权限信息"><a href="#用户权限信息" class="headerlink" title="用户权限信息"></a>用户权限信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">whoami        当前用户名</span><br><span class="line">id            当前用户信息</span><br><span class="line">cat &#x2F;etc&#x2F;sudoers  谁被允许以root身份执行</span><br><span class="line">sudo -l       当前用户可以以root身份执行操作</span><br></pre></td></tr></table></figure>
+
+<h4 id="环境信息"><a href="#环境信息" class="headerlink" title="环境信息"></a>环境信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">env        显示环境变量</span><br><span class="line">set        现实环境变量</span><br><span class="line">echo %PATH 路径信息</span><br><span class="line">history    显示当前用户的历史命令记录</span><br><span class="line">pwd        输出工作目录</span><br><span class="line">cat &#x2F;etc&#x2F;profile   显示默认系统变量</span><br><span class="line">cat &#x2F;etc&#x2F;shells    显示可用的shellrc</span><br><span class="line">cat &#x2F;etc&#x2F;bashrc</span><br><span class="line">cat ~&#x2F;.bash_profile</span><br><span class="line">cat ~&#x2F;.bashrc</span><br><span class="line">cat ~&#x2F;.bash_logout</span><br></pre></td></tr></table></figure>
+
+<h4 id="进程和服务"><a href="#进程和服务" class="headerlink" title="进程和服务"></a>进程和服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ps aux</span><br><span class="line">ps -ef</span><br><span class="line">top</span><br><span class="line">cat &#x2F;etc&#x2F;services</span><br></pre></td></tr></table></figure>
+
+<p>查看以root 运行的进程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ps aux | grep root</span><br><span class="line">ps -ef | grep root</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看安装的软件"><a href="#查看安装的软件" class="headerlink" title="查看安装的软件"></a>查看安装的软件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls -alh &#x2F;usr&#x2F;bin&#x2F;</span><br><span class="line">ls -alh &#x2F;sbin&#x2F;</span><br><span class="line">ls -alh &#x2F;var&#x2F;cache&#x2F;yum&#x2F;</span><br><span class="line">dpkg -l</span><br></pre></td></tr></table></figure>
+
+<h4 id="服务-插件"><a href="#服务-插件" class="headerlink" title="服务/插件"></a>服务/插件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cat &#x2F;etc&#x2F;syslog.conf</span><br><span class="line">cat &#x2F;etc&#x2F;chttp.conf</span><br><span class="line">cat &#x2F;etc&#x2F;lighttpd.conf</span><br><span class="line">cat &#x2F;etc&#x2F;cups&#x2F;cupsd.conf</span><br><span class="line">cat &#x2F;etc&#x2F;inetd.conf</span><br><span class="line">cat &#x2F;etc&#x2F;apache2&#x2F;apache2.conf</span><br><span class="line">cat &#x2F;etc&#x2F;my.conf</span><br><span class="line">cat &#x2F;etc&#x2F;httpd&#x2F;conf&#x2F;httpd.conf</span><br><span class="line">cat &#x2F;opt&#x2F;lampp&#x2F;etc&#x2F;httpd.conf</span><br><span class="line">ls -aRl &#x2F;etc&#x2F; | awk &#39;$1 ~ &#x2F;^.*r.*&#x2F;</span><br></pre></td></tr></table></figure>
+
+<h4 id="计划任务"><a href="#计划任务" class="headerlink" title="计划任务"></a>计划任务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">crontab -l</span><br><span class="line">ls -alh &#x2F;var&#x2F;spool&#x2F;cron</span><br><span class="line">ls -al &#x2F;etc&#x2F; | grep cron</span><br><span class="line">ls -al &#x2F;etc&#x2F;cron*</span><br><span class="line">cat &#x2F;etc&#x2F;cron*</span><br><span class="line">cat &#x2F;etc&#x2F;at.allow</span><br><span class="line">cat &#x2F;etc&#x2F;at.deny</span><br><span class="line">cat &#x2F;etc&#x2F;cron.allow</span><br><span class="line">cat &#x2F;etc&#x2F;cron.deny</span><br><span class="line">cat &#x2F;etc&#x2F;crontab</span><br><span class="line">cat &#x2F;etc&#x2F;anacrontab</span><br><span class="line">cat &#x2F;var&#x2F;spool&#x2F;cron&#x2F;crontabs&#x2F;root</span><br></pre></td></tr></table></figure>
+
+<h4 id="有无明文存放用户密码"><a href="#有无明文存放用户密码" class="headerlink" title="有无明文存放用户密码"></a>有无明文存放用户密码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">grep -i user [filename]</span><br><span class="line">grep -i pass [filename]</span><br><span class="line">grep -C 5 &quot;password&quot; [filename]</span><br><span class="line">find , -name &quot;*.php&quot; -print0 | xargs -0 grep -i -n &quot;var $password&quot;</span><br></pre></td></tr></table></figure>
+
+<h4 id="有无ssh-私钥"><a href="#有无ssh-私钥" class="headerlink" title="有无ssh 私钥"></a>有无ssh 私钥</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">cat ~&#x2F;.ssh&#x2F;authorized_keys</span><br><span class="line">cat ~&#x2F;.ssh&#x2F;identity.pub</span><br><span class="line">cat ~&#x2F;.ssh&#x2F;identity</span><br><span class="line">cat ~&#x2F;.ssh&#x2F;id_rsa.pub</span><br><span class="line">cat ~&#x2F;.ssh&#x2F;id_rsa</span><br><span class="line">cat ~&#x2F;.ssh&#x2F;id_dsa.pub</span><br><span class="line">cat ~&#x2F;.ssh&#x2F;id_dsa</span><br><span class="line">cat &#x2F;etc&#x2F;ssh&#x2F;ssh_config</span><br><span class="line">cat &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br><span class="line">cat &#x2F;etc&#x2F;ssh&#x2F;ssh_host_dsa_key.pub</span><br><span class="line">cat &#x2F;etc&#x2F;ssh&#x2F;ssh_host_dsa_key</span><br><span class="line">cat &#x2F;etc&#x2F;ssh&#x2F;ssh_host_rsa_key.pub</span><br><span class="line">cat &#x2F;etc&#x2F;ssh&#x2F;ssh_host_rsa_key</span><br><span class="line">cat &#x2F;etc&#x2F;ssh&#x2F;ssh_host_key.pub</span><br><span class="line">cat &#x2F;etc&#x2F;ssh&#x2F;ssh_host_key</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看与当前机器通信的其他用户或者主机"><a href="#查看与当前机器通信的其他用户或者主机" class="headerlink" title="查看与当前机器通信的其他用户或者主机"></a>查看与当前机器通信的其他用户或者主机</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">lsof -i</span><br><span class="line">lsof -i :80</span><br><span class="line">grep 80 &#x2F;etc&#x2F;services</span><br><span class="line">netstat -antup</span><br><span class="line">netstat -antpx</span><br><span class="line">netstat -tulpn</span><br><span class="line">chkconfig --list</span><br><span class="line">chkconfig --list | grep 3:on</span><br><span class="line">last</span><br><span class="line">w</span><br></pre></td></tr></table></figure>
+
+<h4 id="日志文件"><a href="#日志文件" class="headerlink" title="日志文件"></a>日志文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">cat &#x2F;var&#x2F;log&#x2F;boot.log</span><br><span class="line">cat &#x2F;var&#x2F;log&#x2F;cron</span><br><span class="line">cat &#x2F;var&#x2F;log&#x2F;syslog</span><br><span class="line">cat &#x2F;var&#x2F;log&#x2F;wtmp</span><br><span class="line">cat &#x2F;var&#x2F;run&#x2F;utmp</span><br><span class="line">cat &#x2F;etc&#x2F;httpd&#x2F;logs&#x2F;access_log</span><br><span class="line">cat &#x2F;etc&#x2F;httpd&#x2F;logs&#x2F;access.log</span><br><span class="line">cat &#x2F;etc&#x2F;httpd&#x2F;logs&#x2F;error_log</span><br><span class="line">cat &#x2F;etc&#x2F;httpd&#x2F;logs&#x2F;error.log</span><br><span class="line">cat &#x2F;var&#x2F;log&#x2F;apache2&#x2F;access_log</span><br><span class="line">cat &#x2F;var&#x2F;log&#x2F;apache2&#x2F;access.log</span><br><span class="line">cat &#x2F;var&#x2F;log&#x2F;apache2&#x2F;error_log</span><br><span class="line">cat &#x2F;var&#x2F;log&#x2F;apache2&#x2F;error.log</span><br><span class="line">cat &#x2F;var&#x2F;log&#x2F;apache&#x2F;access_log</span><br><span class="line">cat &#x2F;var&#x2F;log&#x2F;apache&#x2F;access.log</span><br><span class="line">cat &#x2F;var&#x2F;log&#x2F;auth.log</span><br><span class="line">cat &#x2F;var&#x2F;log&#x2F;chttp.log</span><br><span class="line">cat &#x2F;var&#x2F;log&#x2F;cups&#x2F;error_log</span><br><span class="line">cat &#x2F;var&#x2F;log&#x2F;dpkg.log</span><br><span class="line">cat &#x2F;var&#x2F;log&#x2F;faillog</span><br><span class="line">cat &#x2F;var&#x2F;log&#x2F;httpd&#x2F;access_log</span><br><span class="line">cat &#x2F;var&#x2F;log&#x2F;httpd&#x2F;access.log</span><br><span class="line">cat &#x2F;var&#x2F;log&#x2F;httpd&#x2F;error_log</span><br><span class="line">cat &#x2F;var&#x2F;log&#x2F;httpd&#x2F;error.log</span><br><span class="line">cat &#x2F;var&#x2F;log&#x2F;lastlog</span><br><span class="line">cat &#x2F;var&#x2F;log&#x2F;lighttpd&#x2F;access.log</span><br><span class="line">cat &#x2F;var&#x2F;log&#x2F;lighttpd&#x2F;error.log</span><br><span class="line">cat &#x2F;var&#x2F;log&#x2F;lighttpd&#x2F;lighttpd.access.log</span><br><span class="line">cat &#x2F;var&#x2F;log&#x2F;lighttpd&#x2F;lighttpd.error.log</span><br><span class="line">cat &#x2F;var&#x2F;log&#x2F;messages</span><br><span class="line">cat &#x2F;var&#x2F;log&#x2F;secure</span><br><span class="line">cat &#x2F;var&#x2F;log&#x2F;syslog</span><br><span class="line">cat &#x2F;var&#x2F;log&#x2F;wtmp</span><br><span class="line">cat &#x2F;var&#x2F;log&#x2F;xferlog</span><br><span class="line">cat &#x2F;var&#x2F;log&#x2F;yum.log</span><br><span class="line">cat &#x2F;var&#x2F;run&#x2F;utmp</span><br><span class="line">cat &#x2F;var&#x2F;webmin&#x2F;miniserv.log</span><br><span class="line">cat &#x2F;var&#x2F;www&#x2F;logs&#x2F;access_log</span><br><span class="line">cat &#x2F;var&#x2F;www&#x2F;logs&#x2F;access.log</span><br><span class="line">ls -alh &#x2F;var&#x2F;lib&#x2F;dhcp3&#x2F;</span><br><span class="line">ls -alh &#x2F;var&#x2F;log&#x2F;postgresql&#x2F;</span><br><span class="line">ls -alh &#x2F;var&#x2F;log&#x2F;proftpd&#x2F;</span><br><span class="line">ls -alh &#x2F;var&#x2F;log&#x2F;samba&#x2F;</span><br><span class="line"></span><br><span class="line">Note: auth.log, boot, btmp, daemon.log, debug, dmesg, kern.log, mail.info, mail.log, mail.warn, messages, syslog, udev, wtmp</span><br></pre></td></tr></table></figure>
+
+<h4 id="交互式shell"><a href="#交互式shell" class="headerlink" title="交互式shell"></a>交互式shell</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python -c &#39;import pty;pty.spawn(&quot;&#x2F;bin&#x2F;bash&quot;)&#39;</span><br><span class="line">echo os.system(&#39;&#x2F;bin&#x2F;bash&#39;)</span><br><span class="line">&#x2F;bin&#x2F;sh -i</span><br></pre></td></tr></table></figure>
+
+<h4 id="可提权SUID-amp-amp-GUID"><a href="#可提权SUID-amp-amp-GUID" class="headerlink" title="可提权SUID &amp;&amp; GUID"></a>可提权SUID &amp;&amp; GUID</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">find &#x2F; -perm -1000 -type d 2&gt;&#x2F;dev&#x2F;null   # Sticky bit - Only the owner of the directory or the owner of a file can delete or rename here.</span><br><span class="line">find &#x2F; -perm -g&#x3D;s -type f 2&gt;&#x2F;dev&#x2F;null    # SGID (chmod 2000) - run as the group, not the user who started it.</span><br><span class="line">find &#x2F; -perm -u&#x3D;s -type f 2&gt;&#x2F;dev&#x2F;null    # SUID (chmod 4000) - run as the owner, not the user who started it.</span><br><span class="line"></span><br><span class="line">find &#x2F; -perm -g&#x3D;s -o -perm -u&#x3D;s -type f 2&gt;&#x2F;dev&#x2F;null    # SGID or SUID</span><br><span class="line">for i in &#96;locate -r &quot;bin$&quot;&#96;; do find $i \( -perm -4000 -o -perm -2000 \) -type f 2&gt;&#x2F;dev&#x2F;null; done    # Looks in &#39;common&#39; places: &#x2F;bin, &#x2F;sbin, &#x2F;usr&#x2F;bin, &#x2F;usr&#x2F;sbin, &#x2F;usr&#x2F;local&#x2F;bin, &#x2F;usr&#x2F;local&#x2F;sbin and any other *bin, for SGID or SUID (Quicker search)</span><br><span class="line"></span><br><span class="line"># find starting at root (&#x2F;), SGID or SUID, not Symbolic links, only 3 folders deep, list with more detail and hide any errors (e.g. permission denied)</span><br><span class="line">find &#x2F; -perm -g&#x3D;s -o -perm -4000 ! -type l -maxdepth 3 -exec ls -ld &#123;&#125; \; 2&gt;&#x2F;dev&#x2F;null</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看可写-执行目录"><a href="#查看可写-执行目录" class="headerlink" title="查看可写/执行目录"></a>查看可写/执行目录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">find &#x2F; -writable -type d 2&gt;&#x2F;dev&#x2F;null      # world-writeable folders</span><br><span class="line">find &#x2F; -perm -222 -type d 2&gt;&#x2F;dev&#x2F;null     # world-writeable folders</span><br><span class="line">find &#x2F; -perm -o w -type d 2&gt;&#x2F;dev&#x2F;null     # world-writeable folders</span><br><span class="line"></span><br><span class="line">find &#x2F; -perm -o x -type d 2&gt;&#x2F;dev&#x2F;null     # world-executable folders</span><br><span class="line"></span><br><span class="line">find &#x2F; \( -perm -o w -perm -o x \) -type d 2&gt;&#x2F;dev&#x2F;null   # world-writeable &amp; executable folders</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看安装过的工具"><a href="#查看安装过的工具" class="headerlink" title="查看安装过的工具"></a>查看安装过的工具</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">find &#x2F; -name perl*</span><br><span class="line">find &#x2F; -name python*</span><br><span class="line">find &#x2F; -name gcc*</span><br></pre></td></tr></table></figure>
+
+
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>jinny</li>
+    <li><strong>本文链接：</strong><a href="http://example.com/2020/06/29/linux-info/index.html" title="http:&#x2F;&#x2F;example.com&#x2F;2020&#x2F;06&#x2F;29&#x2F;linux-info&#x2F;index.html">http:&#x2F;&#x2F;example.com&#x2F;2020&#x2F;06&#x2F;29&#x2F;linux-info&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img src="">
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux%E5%86%85%E7%BD%91%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" rel="tag">linux内网信息收集</a></li></ul> 
+
+        
+  <nav class="nav">
+    <a href="/2020/06/29/icmptunnel/"><i class="iconfont iconleft"></i>icmp隐藏隧道</a>
+    <a href="/2020/06/29/linux-tiquan/">linux提权<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/zhaoo "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:izhaoo@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://pl.jinny.vip">jinny</a></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+  
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
